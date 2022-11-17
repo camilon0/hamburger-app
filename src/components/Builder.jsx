@@ -29,7 +29,7 @@ const Builder = () => {
 
   const total = ingredientsBurger.map((item, index) => item.price);
 
-  const total1 = total.reduce(
+  const subTotal = total.reduce(
     (previousValue, currentValue) => previousValue + currentValue,
     0
   );
@@ -39,7 +39,7 @@ const Builder = () => {
       const hamburger = {
         hamburger: "BURGER",
         ingredients: ingredientsBurger,
-        price: total1,
+        price: subTotal,
       };
       const listaGenerada = [...listBurger, hamburger];
       setListBurger(listaGenerada);
@@ -71,7 +71,7 @@ const Builder = () => {
           </button>
         ))}
       </div>
-      <span className="total">{total1}$ </span>
+      <span className="total">{subTotal}$ </span>
       <div className="button-bottom">
         <button className="button" onClick={addList}>
           {" "}
